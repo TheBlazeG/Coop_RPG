@@ -671,6 +671,7 @@ GameObject:
   - component: {fileID: 2102735304}
   - component: {fileID: 2102735303}
   - component: {fileID: 2102735306}
+  - component: {fileID: 2102735307}
   m_Layer: 0
   m_Name: Prototype Runner
   m_TagString: Untagged
@@ -787,6 +788,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 740186229371686623, guid: bf37799575f91a043aa303b8d754e100, type: 3}
+--- !u!114 &2102735307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102735302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b8d58a573788044b5286bf3fcdfa7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

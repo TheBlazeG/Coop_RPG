@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 652901853100961911}
   - component: {fileID: 7418709190508240256}
   - component: {fileID: 2109791159311594870}
+  - component: {fileID: -3269146821069231228}
   - component: {fileID: 8866609152149407711}
+  - component: {fileID: -4278640654645337299}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -129,8 +131,22 @@ MonoBehaviour:
   Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
+  - {fileID: -3269146821069231228}
   - {fileID: 8866609152149407711}
   ForceRemoteRenderTimeframe: 0
+--- !u!114 &-3269146821069231228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740186229371686623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d59668d6cd551324aaa17d2037adf5ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
 --- !u!114 &8866609152149407711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,3 +164,28 @@ MonoBehaviour:
   SyncParent: 0
   _autoAOIOverride: 1
   DisableSharedModeInterpolation: 0
+--- !u!143 &-4278640654645337299
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740186229371686623}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
