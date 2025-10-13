@@ -4,6 +4,7 @@ using UnityEngine;
 public class Player : NetworkBehaviour
 {
     private InputActions inputActions;
+
     bool eggpain = false;
     bool fayah = false;
 
@@ -51,6 +52,8 @@ public class Player : NetworkBehaviour
     public GameObject bulletPrefab;
     public Transform shootPos;
 
+    public GameObject particles;
+
     [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority)]
     private void Rpc_ShootAShot()
     {
@@ -65,6 +68,17 @@ public class Player : NetworkBehaviour
             Debug.Log("yo cuando no tengo cuerpo");
         }
     }
+
+    [Rpc(RpcSources.StateAuthority,RpcTargets.All)]
+    private void Rpc_PlayShootEffect()
+    {
+        Instantiate(particles, shootPos.position, shootPos.rotation);
+    }
     #endregion
+
+    private void OnDisable()
+    {
+        inputActions.Player.Disable();
+    }
 
 }
