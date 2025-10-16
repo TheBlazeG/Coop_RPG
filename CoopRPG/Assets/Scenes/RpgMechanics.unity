@@ -257,6 +257,11 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &229315260 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6343093814876819280, guid: b2736797caeb51448919980c282606db, type: 3}
+  m_PrefabInstance: {fileID: 1889971489}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &426832810
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +271,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 426832812}
-  - component: {fileID: 426832811}
   m_Layer: 0
   m_Name: Spawner 2
   m_TagString: Untagged
@@ -274,33 +278,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &426832811
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 426832810}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &426832812
 Transform:
   m_ObjectHideFlags: 0
@@ -542,6 +519,8 @@ MonoBehaviour:
   playerSpawners:
   - {fileID: 1122507368}
   - {fileID: 426832812}
+  playerText: {fileID: 1359432850}
+  combatUI: {fileID: 229315260}
 --- !u!1 &1122507364
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +552,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1359432850 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4595592336446155777, guid: b2736797caeb51448919980c282606db, type: 3}
+  m_PrefabInstance: {fileID: 1889971489}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1646710449
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,9 +876,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4464629429322636055, guid: b2736797caeb51448919980c282606db, type: 3}
+      propertyPath: m_Name
+      value: CombatText
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595592336446155777, guid: b2736797caeb51448919980c282606db, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653845373653523995, guid: b2736797caeb51448919980c282606db, type: 3}
+      propertyPath: m_Name
+      value: PlayerText
+      objectReference: {fileID: 0}
     - target: {fileID: 6343093814876819280, guid: b2736797caeb51448919980c282606db, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6343093814876819280, guid: b2736797caeb51448919980c282606db, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016291264798511942, guid: b2736797caeb51448919980c282606db, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173056415668969296, guid: b2736797caeb51448919980c282606db, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -51.903202
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173056415668969296, guid: b2736797caeb51448919980c282606db, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -13.4984
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
