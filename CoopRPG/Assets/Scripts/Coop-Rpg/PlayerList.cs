@@ -9,4 +9,6 @@ public class PlayerList : NetworkBehaviour
 
     [Networked]
     public PlayerRef Player2 { get; set; }
+
+    
 }

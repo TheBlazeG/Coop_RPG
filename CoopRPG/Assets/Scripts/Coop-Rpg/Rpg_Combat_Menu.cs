@@ -1,8 +1,9 @@
+using Fusion;
 using UnityEngine;
 
-public class Rpg_Combat_Menu : MonoBehaviour
+public class Rpg_Combat_Menu : NetworkBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+  public PlayerRef localPlayer;
     void Start()
     {
         

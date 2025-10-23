@@ -1,17 +1,26 @@
 using Fusion;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TurnSystem : NetworkBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+{   
+    public PlayerList players;
 
-    // Update is called once per frame
-    void Update()
+    public List<object> combatants=new();
+    private void Start()
     {
         
     }
+    
+    private void Update()
+    {
+        if (players.Player2 !=null)
+        {
+            //add enemy
+            combatants.Add(players.Player1);
+            combatants.Add(players.Player2);
+            
+        }
+    }
+    
 }
