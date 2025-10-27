@@ -1,10 +1,23 @@
 using Fusion;
+using System;
 using UnityEngine;
 
 public class PlayerMoveHard : NetworkBehaviour
 {
     private CharacterController controller;
     public float speed = 2f;
+
+    public override void Spawned()
+    {
+        base.Spawned();
+        RPC_RegisterPlayer();
+
+    }
+    public override void Despawned(NetworkRunner runner, bool hasState)
+    {
+        base.Despawned(runner, hasState);
+        RPC_RemovePlayer(Object.InputAuthority);
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
@@ -37,5 +50,20 @@ public class PlayerMoveHard : NetworkBehaviour
         }
 
         controller.Move(vector*speed*Runner.DeltaTime);
+    }
+    [Rpc(RpcSources.InputAuthority,RpcTargets.All)]
+    private void RPC_RegisterPlayer()
+    {
+        DiscordMod.Instance.TryAddPlayah(Object.InputAuthority, Object);    
+    }
+
+    [Rpc(RpcSources.InputAuthority,RpcTargets.All)]
+    private void RPC_RemovePlayer(PlayerRef playerRef)
+    {
+        if (HasInputAuthority)
+        {
+            return;
+        }
+        DiscordMod.Instance.MandaALVPlayer(playerRef);
     }
 }
