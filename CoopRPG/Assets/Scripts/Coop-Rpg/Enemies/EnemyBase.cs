@@ -9,6 +9,11 @@ public class EnemyBase : NetworkBehaviour
     public int attack { get; private set; }
 
 
+    private void Start()
+    {
+        GameObject.FindAnyObjectByType<TurnSystem>().combatants.Add(this);
+    }
+
     [Rpc(RpcSources.InputAuthority, RpcTargets.All)]
     public virtual void RPC_Attack()
     {
