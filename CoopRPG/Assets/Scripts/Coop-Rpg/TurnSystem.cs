@@ -16,10 +16,8 @@ public class TurnSystem : NetworkBehaviour
     {
         if (players.Player2 !=null)
         {
-            //add enemy
             combatants.Add(players.Player1);
             combatants.Add(players.Player2);
-            
         }
     }
     

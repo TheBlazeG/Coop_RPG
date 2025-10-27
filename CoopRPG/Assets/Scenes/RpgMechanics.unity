@@ -134,8 +134,9 @@ GameObject:
   - component: {fileID: 92003679}
   - component: {fileID: 92003678}
   - component: {fileID: 92003677}
+  - component: {fileID: 92003684}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,6 +177,7 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 92003677}
+  - {fileID: 92003684}
   ForceRemoteRenderTimeframe: 0
 --- !u!54 &92003679
 Rigidbody:
@@ -295,6 +297,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &92003684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92003676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53979ae26c8403944acaccc9bea4a301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &164489996
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,6 +988,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1757975510}
   - component: {fileID: 1757975509}
+  - component: {fileID: 1757975513}
+  - component: {fileID: 1757975512}
+  - component: {fileID: 1757975511}
   m_Layer: 0
   m_Name: CombatAndTurnManager
   m_TagString: Untagged
@@ -997,7 +1014,10 @@ MonoBehaviour:
   ObjectInterest: 1
   Flags: 262145
   NestedObjects: []
-  NetworkedBehaviours: []
+  NetworkedBehaviours:
+  - {fileID: 1757975513}
+  - {fileID: 1757975512}
+  - {fileID: 1757975511}
   ForceRemoteRenderTimeframe: 0
 --- !u!4 &1757975510
 Transform:
@@ -1014,6 +1034,44 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1757975511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757975508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f078085ec00a54cb716d137e93a400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1757975512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757975508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 116251509c8ed594b9623b5e76e97d82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players: {fileID: 1757975511}
+--- !u!114 &1757975513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757975508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af04632feb0cd55429aefc011e828459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localPlayer: {fileID: 0}
 --- !u!1001 &1889971489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1102,18 +1160,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4464629429322636055, guid: b2736797caeb51448919980c282606db, type: 3}
-      propertyPath: m_Name
-      value: CombatText
-      objectReference: {fileID: 0}
-    - target: {fileID: 4595592336446155777, guid: b2736797caeb51448919980c282606db, type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4653845373653523995, guid: b2736797caeb51448919980c282606db, type: 3}
-      propertyPath: m_Name
-      value: PlayerText
-      objectReference: {fileID: 0}
     - target: {fileID: 6343093814876819280, guid: b2736797caeb51448919980c282606db, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -1121,18 +1167,6 @@ PrefabInstance:
     - target: {fileID: 6343093814876819280, guid: b2736797caeb51448919980c282606db, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8016291264798511942, guid: b2736797caeb51448919980c282606db, type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8173056415668969296, guid: b2736797caeb51448919980c282606db, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -51.903202
-      objectReference: {fileID: 0}
-    - target: {fileID: 8173056415668969296, guid: b2736797caeb51448919980c282606db, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -13.4984
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

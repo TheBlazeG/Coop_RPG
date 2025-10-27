@@ -20,15 +20,17 @@ public class PlayerSpawnerRPG : SimulationBehaviour, IPlayerJoined
                 playerText.text = "Player " +player.AsIndex;
                 combatUI.SetActive(true);
             GameObject.Find("CombatAndTurnManager").TryGetComponent<Rpg_Combat_Menu>(out Rpg_Combat_Menu combat);
-            combat.localPlayer = player;
+            combat.localPlayerId = player;
             if(player.AsIndex ==1)
             {
                 GameObject.Find("CombatAndTurnManager").TryGetComponent<PlayerList>(out PlayerList list);
+                combat.localPlayer= GameObject.Find("Player1").GetComponent<PlayerRPG>();
                 list.Player1 = player;
             }
             else
             {
                 GameObject.Find("CombatAndTurnManager").TryGetComponent<PlayerList>(out PlayerList list);
+                combat.localPlayer = GameObject.Find("Player2").GetComponent<PlayerRPG>();
                 list.Player2= player;
             }
         }

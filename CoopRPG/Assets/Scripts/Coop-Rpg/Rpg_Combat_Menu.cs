@@ -3,14 +3,17 @@ using UnityEngine;
 
 public class Rpg_Combat_Menu : NetworkBehaviour
 {
-  public PlayerRef localPlayer;
-    void Start()
+  public PlayerRef localPlayerId;
+    public PlayerRPG localPlayer;
+  
+  public void attack()
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+  public void Defend() 
+    { }
+
+    public void Skill()
     {
         
     }
