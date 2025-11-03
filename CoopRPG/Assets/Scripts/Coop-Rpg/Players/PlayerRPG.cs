@@ -1,7 +1,7 @@
 using Fusion;
 using UnityEngine;
 
-public abstract class PlayerRPG : NetworkBehaviour
+public class PlayerRPG : NetworkBehaviour
 {
     public int hp {  get; private set; }
     public int speed {  get; private set; }

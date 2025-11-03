@@ -7,18 +7,23 @@ public class TurnSystem : NetworkBehaviour
     public PlayerList players;
 
     public List<object> combatants=new();
+
+
+    private void OnEnable()
+    {
+        
+    }
     private void Start()
     {
+        
+            combatants.Add(players.Player1);
+            combatants.Add(players.Player2);
         
     }
     
     private void Update()
     {
-        if (players.Player2 !=null)
-        {
-            combatants.Add(players.Player1);
-            combatants.Add(players.Player2);
-        }
+        
     }
     
 }
