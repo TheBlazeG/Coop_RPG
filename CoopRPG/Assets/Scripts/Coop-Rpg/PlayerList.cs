@@ -7,7 +7,7 @@ public class PlayerList : NetworkBehaviour
     [Networked]
     public PlayerRef Player1 { get; set; }
 
-    [Networked, OnChangedRenderAttribute(nameof(CallRPCCombatMenu))]
+    [Networked]
     public PlayerRef Player2 { get; set; }
     public PlayerRef player2Proxy;
 
@@ -26,11 +26,7 @@ public class PlayerList : NetworkBehaviour
         Debug.Log("My player is now " + Player2);
     }
 
-    void CallRPCCombatMenu()
-    {
-        Debug.Log("changedrender called");
-        //RPC_ActivateCombatMenu();
-    }
+   
 
     [Rpc(RpcSources.All,RpcTargets.All)]
     void RPC_ActivateCombatMenu(PlayerRef elTwo) 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TurnSystem : NetworkBehaviour
 {   
     public PlayerList players;
-
+    public GameObject enemy;
     public List<object> combatants=new();
 
 
@@ -13,6 +13,10 @@ public class TurnSystem : NetworkBehaviour
     {
         combatants.Add(players.Player1);
                     combatants.Add(players.Player2);
+        foreach (var item in combatants)
+        {
+            Debug.Log(item);
+        }
     }
     private void Start()
     {
