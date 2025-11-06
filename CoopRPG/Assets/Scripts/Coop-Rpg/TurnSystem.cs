@@ -11,13 +11,13 @@ public class TurnSystem : NetworkBehaviour
 
     private void OnEnable()
     {
-        
+        combatants.Add(players.Player1);
+                    combatants.Add(players.Player2);
     }
     private void Start()
     {
         
-            combatants.Add(players.Player1);
-            combatants.Add(players.Player2);
+            
         
     }
     

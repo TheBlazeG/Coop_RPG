@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyBase : NetworkBehaviour
 {
     public int hp { get; private set; }
-    public int speed { get; private set; }
+    public int speed;
     public int defense { get; private set; }
     public int attack { get; private set; }
 

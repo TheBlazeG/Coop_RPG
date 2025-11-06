@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerRPG : NetworkBehaviour
 {
     public int hp {  get; private set; }
-    public int speed {  get; private set; }
+    [SerializeField] public int speed;
     public int defense { get; private set; }
     public int attack { get; private set; }
 
