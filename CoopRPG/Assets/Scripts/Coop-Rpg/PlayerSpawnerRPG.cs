@@ -8,6 +8,7 @@ public class PlayerSpawnerRPG : SimulationBehaviour, IPlayerJoined
     public Transform[] playerSpawners;
     public TextMeshProUGUI playerText;
     public GameObject combatUI;
+    public Rpg_Combat_Menu combatMenu;
 
     public void PlayerJoined(PlayerRef player)
     {
@@ -19,20 +20,21 @@ public class PlayerSpawnerRPG : SimulationBehaviour, IPlayerJoined
             GameObject spawnedPlayer =Runner.Spawn(playerPrefab[player.AsIndex-1], playerSpawners[player.AsIndex-1].position, Quaternion.identity, player).gameObject;
                 playerText.text = "Player " +player.AsIndex;
                 combatUI.SetActive(true);
-            GameObject.Find("CombatAndTurnManager").TryGetComponent<Rpg_Combat_Menu>(out Rpg_Combat_Menu combat);
-            combat.localPlayerId = player;
+            combatMenu.localPlayerId = player;
             if(player.AsIndex ==1)
             {
                 GameObject.Find("CombatAndTurnManager").TryGetComponent<PlayerList>(out PlayerList list);
-                Debug.Log(combat);
-                combat.localPlayer= spawnedPlayer.GetComponent<PlayerRPG>();
+                Debug.Log(combatMenu);
+                combatMenu.localPlayer= spawnedPlayer.GetComponent<PlayerRPG>();
                 list.Player1 = player;
             }
-            else
+            if(player.AsIndex ==2)
             {
-                GameObject.Find("CombatAndTurnManager").TryGetComponent<PlayerList>(out PlayerList list);
-                combat.localPlayer = spawnedPlayer.GetComponent<PlayerRPG>();
-                list.Player2= player;
+                combatMenu.gameObject.TryGetComponent<PlayerList>(out PlayerList list);
+                combatMenu.localPlayer = spawnedPlayer.GetComponent<PlayerRPG>();
+                Debug.Log("Before Stuff");
+                list.player2Proxy= player;
+                //Debug.Log("After player is : " + list.Player2);
 
             }
         }

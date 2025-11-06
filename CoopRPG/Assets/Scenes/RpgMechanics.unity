@@ -712,6 +712,7 @@ MonoBehaviour:
   - {fileID: 426832812}
   playerText: {fileID: 1359432850}
   combatUI: {fileID: 229315260}
+  combatMenu: {fileID: 1757975513}
 --- !u!1 &1122507364
 GameObject:
   m_ObjectHideFlags: 0
